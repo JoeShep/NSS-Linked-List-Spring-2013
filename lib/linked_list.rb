@@ -64,6 +64,17 @@ class LinkedList
     "|#{payloads} |"
   end
 
+  def indexOf(string)
+    return nil if @first_item.nil?
+    current_item=@first_item
+    count=0
+    until string==current_item.payload
+      current_item=current_item.next_list_item
+      count +=1
+      return nil if current_item.nil?
+    end
+    count
+  end
   # ========= Bonus ========== #
 
   def [](payload)
